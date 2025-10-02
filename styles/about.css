@@ -1,0 +1,147 @@
+.about__section {
+  display: flex;
+  align-items: flex-end;
+  gap: 2em;
+  margin-inline: auto;
+  max-width: 1480px;
+  padding: 2.5vh;
+  position: relative;
+}
+
+.about__img-container {
+  position: relative;
+  min-width: 45%;  
+}
+
+.about__img-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, hsl(0, 0%, 5%), transparent);
+}
+
+html[data-theme="light"] .about__img-container::before {
+  display: none;
+}
+
+.about__img-container img {
+  height: 95vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about__content {
+  margin-bottom: 5%;
+}
+
+.about__title > legend {
+  font-size: 8em;
+  letter-spacing: -2px;
+  color: var(--text-primary);
+  font-family: 'opensans-bold';
+
+  --skew: 18deg;
+  transform-origin: left;
+  -moz-transform: skew(0deg, var(--skew));
+  -webkit-transform: skew(0deg, var(--skew));
+  -o-transform: skew(0deg, var(--skew));
+  -ms-transform: skew(0deg, var(--skew));
+  transform: skew(0deg, var(--skew));
+
+  animation-delay: 500ms;
+  animation-duration: 600ms;
+}
+
+.about__title > legend.animate {
+  animation-name: revealtext;
+}
+
+.about__description p {
+  line-height: 1.5em;
+  font-size: 1.8em;
+  font-family: 'opensans-light';
+  color: var(--text-secondary);
+}
+
+.animatedOnView {
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 100ms;
+  animation-duration: 800ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.animatedOnView.animate.fromleft {
+  animation-name: appearLeft;
+}
+
+
+@media (max-width: 1000px) {
+  .about__img-container {
+    min-width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .about__section {
+    flex-direction: column;
+    min-height: 60vh;
+  }
+
+  .about__img-container {
+    min-width: calc(100% + 5vh);
+    margin-right: -2.5vh;
+  }
+
+  .about__img-container img {
+    height: 40vh;
+  }
+
+  .about__title {
+    font-size: .7em;
+  }
+
+  .about__description p:last-of-type {
+    margin-top: 1.5em;
+  }
+
+  .about__img-container::before {
+    display: none;    
+  }
+}
+
+@keyframes appearLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@keyframes revealtext {
+  0% {
+    opacity: 0;
+    -moz-transform: skew(0deg, 18deg);
+    -webkit-transform: skew(0deg, 18deg);
+    -o-transform: skew(0deg, 18deg);
+    -ms-transform: skew(0deg, 18deg);
+    transform: skew(0deg, 18deg);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -moz-transform: skew(0deg, 0deg);
+    -webkit-transform: skew(0deg, 0deg);
+    -o-transform: skew(0deg, 0deg);
+    -ms-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+
+  }
+}

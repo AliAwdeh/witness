@@ -1,0 +1,10 @@
+.wrapper {
+  margin-inline: auto;
+  width: min(1280px, 90%);
+}
+
+@media (max-width: 480px) {
+  .wrapper.expand {
+    width: 100%;
+  }
+}

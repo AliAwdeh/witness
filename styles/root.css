@@ -1,0 +1,39 @@
+:root {
+  --clr-primary: hsl(0, 0%, 2%);
+  --clr-secondary: hsl(0, 0%, 62%);
+  --clr-accent: hsl(126, 34%, 59%);
+
+  --text-primary: hsl(0, 0%, 90%);
+  --text-secondary: hsl(0, 0%, 62%);
+  --text-accent: hsl(126, 34%, 59%);
+
+  --clr-grey: rgba(105, 105, 105, 0.2);
+
+  --background-low: rgba(0, 0, 0, .7);
+  font-size: 16px;
+}
+
+html[data-theme="light"] {
+  --text-primary: hsl(0, 0%, 2%);
+  --text-secondary: hsl(0, 0%, 50%);
+  --text-accent: hsl(127, 34%, 36%);
+
+  --clr-primary: hsl(0, 0%, 87%);
+  --clr-secondary: hsl(0, 0%, 60%);
+  --clr-accent: hsl(127, 34%, 36%);
+
+  --clr-grey: rgba(105, 105, 105, 0.2);
+
+  --background-low: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+}

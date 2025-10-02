@@ -1,0 +1,38 @@
+.text__decription {
+  margin-block: 5em;
+}
+
+.text__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text__title > legend {
+  font-size: 3em;
+  font-family: 'opensans-bold';
+  text-transform: capitalize;
+  color: var(--text-primary);
+}
+
+.text__title > a {
+  font-size: .8em;
+  font-family: 'opensans-regular';
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--text-secondary);
+}
+
+.text__title > a:hover {
+  text-decoration: none;
+}
+
+.text__content {
+  color: var(--text-secondary);
+  font-size: 1em;
+  font-family: 'opensans-regular';
+
+  margin-top: 1em;
+}
